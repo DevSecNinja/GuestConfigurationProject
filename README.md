@@ -52,6 +52,21 @@ according to your requirements.
 When you are ready to test, use the task runners by clicking
 `Terminal` and then `Run Task`.
 
+## Task runners
+
+The tool includes task runners that automate the steps to test
+your project and create (and validate) a package to use in Azure Policy Guest Configuration.
+
+The first step requires the Pester module.
+The second and third steps require the GuestConfiguration module.
+
+The GuestConfiguration module includes a copy of the agents used in Azure,
+for both Windows and Linux, so packages can be validated from developer workstations.
+
+- **1. Run tests (Pester)**: Runs [Pester](https://github.com/pester/pester) tests for the new project to verify functionality.
+- **2. Build package**: Runs the `New-GuestConfigurationPackage` command to create a .zip package containing the configuration and custom resources from your project.
+- **3. Test package**: Runs the `Test-GuestConfigurationPackage` command to validate the package by running it using the same agent that is used in Azure, from your workstation.
+
 ## Contents
 
 | File/folder       | Description                                |
