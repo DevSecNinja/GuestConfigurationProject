@@ -11,15 +11,29 @@ tool for scaffolding new projects.
 
 ## Setup
 
-To scaffold a new project,
-save this module to a location on your
-dev workstation.
-Navigate to the template folder
-and run the Invoke-Plaster command.
+To use this solution on your dev workstation,
+you will need to install the module from the
+[PowerShell Gallery](https://powershellgallery.com).
+This is easiest to do from PowerShell.
+
+```powershell
+Install-Module GuestConfigurationProject -repository PSGallery -force
+```
+
+This command will also install the following required modules if they
+are not already available on the machine.
+
+- Plaster
+- Pester
+- GuestConfiguration
+
+This module include task runners for the
+[VS Code](https://code.visualstudio.com/)
+editor.
+However, you could scaffold the project
+and then open it in the editor of your choice.
 
 ## Contents
-
-Outline the file contents of the repository. It helps users navigate the codebase, build configuration and any related assets.
 
 | File/folder       | Description                                |
 |-------------------|--------------------------------------------|
@@ -27,18 +41,16 @@ Outline the file contents of the repository. It helps users navigate the codebas
 | `Modules`         | Custom DSC resource modules.               |
 | `test`            | Pester tests for custom resource modules.  |
 | `.gitignore`      | Define what to ignore at commit time.      |
-| `README.md`       | This README file.                          |
+| `azure-pipelines.yml` | A build script for this project to automate publishing to PSGallery. |
+| `CODE_OF_CONDUCT.md` | Code of conduct for participating in this community collaboration. |
+| `Configuration.md` | A sample MOF file. |
+| `GuestConfigurationProject.gif` | An animated demo.            |
+| `GuestConfigurationProject.psd1` | Module manifest.            |
 | `LICENSE`         | The license for the sample.                |
 | `plasterManifest.xml` | Manifest file to define the Plaster template. |
-
-## Prerequisites
-
-This project requires four PowerShell modules for the task runners to function.
-
-- Pester
-- GuestConfiguration
-- Az.Accoutns
-- Az.PolicyInsights
+| `project.code-workspace` | VS Code workspace settings.         |
+| `README.md`       | This README file.                          |
+| `SECURITY.md`     | How to report security issues.             |
 
 ## Contributing
 
