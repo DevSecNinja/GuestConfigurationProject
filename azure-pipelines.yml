@@ -25,7 +25,7 @@ steps:
     script: |
       ls '$(Build.SourcesDirectory)'
       $params = @{
-        Path        = '$(Build.SourcesDirectory)'
+        Path        = '$(Build.SourcesDirectory)\GuestConfigurationProject.psd1'
         NuGetApiKey = '$(apikey)'
         ErrorAction = 'Stop'
       }
