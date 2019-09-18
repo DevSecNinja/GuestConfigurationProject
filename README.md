@@ -17,7 +17,7 @@ tool for scaffolding new projects.
 
 ## Demo
 
-![GIF](GuestConfigurationProject.gif)
+![gif](gcProject.gif)
 
 ## Setup
 
