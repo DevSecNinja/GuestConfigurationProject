@@ -27,7 +27,7 @@ steps:
       ls '$(Build.SourcesDirectory)'
       Install-Module Plaster,Pester,GuestConfiguration -force
       $params = @{
-        Path        = '$(Build.SourcesDirectory)\GuestConfigurationProject.psd1'
+        Path        = '$(Build.SourcesDirectory)'
         NuGetApiKey = '$(apikey)'
         ErrorAction = 'Stop'
       }
