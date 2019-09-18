@@ -1,7 +1,7 @@
 @{
 
 # Version number of this module.
-ModuleVersion = '0.1.1'
+ModuleVersion = '0.1.2'
 
 # ID used to uniquely identify this module
 GUID = 'acdc41db-bc70-4a5e-8ee6-cc038109f6ee'
@@ -22,10 +22,9 @@ Description = 'A Plaster template for scaffolding projects to author custom Azur
 PowerShellVersion = '7.0.0'
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @('Pester', 
-               'GuestConfiguration', 
-               'Az.Accounts', 
-               'Az.PolicyInsights')
+RequiredModules = @('Plaster',
+               'Pester', 
+               'GuestConfiguration')
 
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
 PrivateData = @{
