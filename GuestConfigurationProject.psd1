@@ -19,7 +19,7 @@ Copyright = '2019'
 Description = 'A Plaster template for scaffolding projects to author custom Azure Policy Guest Configuration packages.'
 
 # Minimum version of the PowerShell engine required by this module
-PowerShellVersion = '7.0.0'
+PowerShellVersion = '5.1.0'
 
 # Modules that must be imported into the global environment prior to importing this module
 RequiredModules = @('Plaster',
