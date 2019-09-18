@@ -23,10 +23,10 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      ls $PSScriptRoot
+      ls '${Build.SourcesDirectory'}'
       $params = @{
-        Path        = $PSScriptRoot
-        NuGetApiKey = ${apikey}
+        Path        = '${Build.SourcesDirectory'}'
+        NuGetApiKey = '${apikey}'
         ErrorAction = 'Stop'
       }
       Publish-Module @params -verbose
