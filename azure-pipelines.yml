@@ -1,0 +1,33 @@
+ool: 
+  vmImage: 'windows-2019'
+
+pr: none
+  
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    exclude:
+    - README.md
+    - CODE_OF_CONDUCT.md
+    - SECURITY.md
+    - LICENSE
+    - .gitignore
+    - .github/*
+    - package
+    - scratch.*
+
+steps:
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      $params = @{
+        Path        = $PSScriptRoot
+        NuGetApiKey = ${apikey}
+        ErrorAction = 'Stop'
+      }
+      Publish-Module @params -verbose
+    pwsh: false
+  displayName: 'Publish to Gallery on merge to Master'
