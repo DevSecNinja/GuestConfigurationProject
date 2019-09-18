@@ -9,6 +9,7 @@ trigger:
     - master
   paths:
     exclude:
+    - azure-pipelines.yml
     - README.md
     - CODE_OF_CONDUCT.md
     - SECURITY.md
@@ -24,6 +25,7 @@ steps:
     targetType: 'inline'
     script: |
       ls '$(Build.SourcesDirectory)'
+      Install-Module Plaster,Pester,GuestConfiguration -force
       $params = @{
         Path        = '$(Build.SourcesDirectory)\GuestConfigurationProject.psd1'
         NuGetApiKey = '$(apikey)'
