@@ -23,9 +23,9 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      ls '${Build.SourcesDirectory'}'
+      ls '${Build.SourcesDirectory}'
       $params = @{
-        Path        = '${Build.SourcesDirectory'}'
+        Path        = '${Build.SourcesDirectory}'
         NuGetApiKey = '${apikey}'
         ErrorAction = 'Stop'
       }
