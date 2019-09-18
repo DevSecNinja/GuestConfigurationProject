@@ -7,7 +7,7 @@ tool for scaffolding new projects.
 
 ## Demo
 
-![gif](GuestConfigurationProject.gif)
+![gif](https://github.com/microsoft/GuestConfigurationProject/raw/img/GuestConfigurationProject.gif)
 
 ## Setup
 
