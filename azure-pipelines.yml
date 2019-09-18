@@ -23,10 +23,10 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      ls '${Build.SourcesDirectory}'
+      ls '$(Build.SourcesDirectory)'
       $params = @{
-        Path        = '${Build.SourcesDirectory}'
-        NuGetApiKey = '${apikey}'
+        Path        = '$(Build.SourcesDirectory)'
+        NuGetApiKey = '$(apikey)'
         ErrorAction = 'Stop'
       }
       Publish-Module @params -verbose
