@@ -15,6 +15,10 @@ to use with the
 [Plaster](https://github.com/powershell/plaster)
 tool for scaffolding new projects.
 
+## Demo
+
+![GIF](/img/GuestConfigurationProject.gif)
+
 ## Setup
 
 To scaffold a new project,
