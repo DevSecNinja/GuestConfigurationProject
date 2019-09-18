@@ -1,13 +1,3 @@
----
-page_type: sample
-languages:
-- PowerShell
-products:
-- GuestConfiguration
-description: "A community supported Plaster template to scaffold projects for custom Azure Policy Guest Configuration resources/configurations"
-urlFragment: "https://github.com/microsoft/guestconfigurationproject"
----
-
 # Guest Configuration Project
 
 This module is a template
