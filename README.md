@@ -16,6 +16,8 @@ you will need to install the module from the
 [PowerShell Gallery](https://powershellgallery.com).
 This is easiest to do from PowerShell.
 
+> This tool has only been tested on PowerShell 7 preview
+
 ```powershell
 Install-Module GuestConfigurationProject -repository PSGallery -force
 ```
@@ -32,6 +34,23 @@ This module include task runners for the
 editor.
 However, you could scaffold the project
 and then open it in the editor of your choice.
+
+## How-to use the tool
+
+Navigate to the folder where the `GuestConfigurationProject` module is installed.
+Run the command `Invoke-Plaster` with a `.` as the Template source location.
+For the Destination path location,
+use any folder where you would like to create a project.
+
+Open VS Code, and open the project folder.
+A small window will prompt to import the workspace.
+This is optional and will not effect the functionality of the task runners.
+
+Use the sample project to create a custom resource/configuration
+according to your requirements.
+
+When you are ready to test, use the task runners by clicking
+`Terminal` and then `Run Task`.
 
 ## Contents
 
