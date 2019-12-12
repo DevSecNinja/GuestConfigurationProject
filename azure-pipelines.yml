@@ -48,7 +48,7 @@ steps:
     targetType: 'inline'
     script: |
       $params = @{
-        Path        = '$(Build.SourcesDirectory)'
+        Path        = '$(Build.SourcesDirectory)\GuestConfigurationProject'
         NuGetApiKey = '$(apikey)'
         ErrorAction = 'Stop'
       }
