@@ -50,7 +50,6 @@ steps:
       $params = @{
         Path        = '$(Build.SourcesDirectory)\GuestConfigurationProject'
         NuGetApiKey = '$(apikey)'
-        ErrorAction = 'Stop'
       }
       Publish-Module @params -verbose
     pwsh: true
