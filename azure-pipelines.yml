@@ -51,6 +51,6 @@ steps:
         Path        = '$(Build.SourcesDirectory)\GuestConfigurationProject'
         NuGetApiKey = '$(apikey)'
       }
-      Publish-Module @params -verbose
+      Publish-Module @params -verbose -debug
     pwsh: true
   displayName: 'Publish to Gallery'
