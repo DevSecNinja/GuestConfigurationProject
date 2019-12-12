@@ -38,7 +38,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      $psversiontable
+      Install-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201 -Force
       Install-Module Plaster,Pester,GuestConfiguration -force
     pwsh: true
   displayName: 'Install required modules'
