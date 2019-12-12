@@ -1,7 +1,7 @@
 @{
 
 # Version number of this module.
-ModuleVersion = '0.1.3'
+ModuleVersion = '0.1.4'
 
 # ID used to uniquely identify this module
 GUID = 'acdc41db-bc70-4a5e-8ee6-cc038109f6ee'
@@ -44,7 +44,7 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        ReleaseNotes = 'https://github.com/microsoft/GuestConfigurationProject/blob/master/README.md#ReleaseNotes'
+        ReleaseNotes = 'https://github.com/microsoft/GuestConfigurationProject/blob/master/CHANGELOG.md'
 
         # Prerelease string of this module
         # Prerelease = ''
