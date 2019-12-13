@@ -34,13 +34,26 @@ steps:
     targetType: 'inline'
     script: |
       mkdir '$(Build.SourcesDirectory)\GuestConfigurationProject'
-      robocopy /e '$(Build.SourcesDirectory)\Modules' '$(Build.SourcesDirectory)\GuestConfigurationProject\Modules'
-      robocopy /e '$(Build.SourcesDirectory)\test' '$(Build.SourcesDirectory)\GuestConfigurationProject\test'
-      copy Configuration.mof $(Build.SourcesDirectory)\GuestConfigurationProject\'
-      copy GestConfigurationProject.psd1 $(Build.SourcesDirectory)\GuestConfigurationProject\'
-      copy LICENSE $(Build.SourcesDirectory)\GuestConfigurationProject\'
-      copy plasterManifest.xml $(Build.SourcesDirectory)\GuestConfigurationProject\'
-      copy project.code-workspace $(Build.SourcesDirectory)\GuestConfigurationProject\'
+      
+      mkdir '$(Build.SourcesDirectory)\GuestConfigurationProject\editor'
+      copy '$(Build.SourcesDirectory)\editor\VSCode\settings.json' '$(Build.SourcesDirectory)\GuestConfigurationProject\editor\VSCode\settings.json'
+      copy '$(Build.SourcesDirectory)\editor\VSCode\tasks.json' '$(Build.SourcesDirectory)\GuestConfigurationProject\editor\VSCode\tasks.json'
+      
+      mkdir '$(Build.SourcesDirectory)\GuestConfigurationProject\Modules'
+      mkdir '$(Build.SourcesDirectory)\GuestConfigurationProject\Modules\Module' 
+      mkdir '$(Build.SourcesDirectory)\GuestConfigurationProject\Modules\DSCResources'
+      mkdir '$(Build.SourcesDirectory)\GuestConfigurationProject\Modules\DSCResources\Resource'
+      copy '$(Build.SourcesDirectory)\Modules\DSCResources\Resource\Resource.psm1' '$(Build.SourcesDirectory)\GuestConfigurationProject\Modules\DSCResources\Resource\Resource.psm1'
+      copy '$(Build.SourcesDirectory)\Modules\DSCResources\Resource\Resource.Schema.mof' '$(Build.SourcesDirectory)\GuestConfigurationProject\Modules\DSCResources\Resource\Resource.Schema.mof'
+      
+      mkdir '$(Build.SourcesDirectory)\GuestConfigurationProject\test'
+      copy '$(Build.SourcesDirectory)\test\Resource.Tests.ps1' '$(Build.SourcesDirectory)\GuestConfigurationProject\test\Resource.Tests.ps1'
+      
+      copy Configuration.mof $(Build.SourcesDirectory)\GuestConfigurationProject\Configuration.mof'
+      copy GuestConfigurationProject.psd1 $(Build.SourcesDirectory)\GuestConfigurationProject\GuestConfigurationProject.psd1'
+      copy LICENSE $(Build.SourcesDirectory)\GuestConfigurationProject\LICENSE'
+      copy plasterManifest.xml $(Build.SourcesDirectory)\GuestConfigurationProject\plasterManifest.xml'
+      copy project.code-workspace $(Build.SourcesDirectory)\GuestConfigurationProject\project.code-workspace'
 
       $params = @{
         Path        = '$(Build.SourcesDirectory)'
