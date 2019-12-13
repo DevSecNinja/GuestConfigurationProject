@@ -34,7 +34,7 @@ steps:
     targetType: 'inline'
     script: |
       $params = @{
-        Path        = '$(Build.SourcesDirectory)\GuestConfigurationProject'
+        Path        = '$(Build.SourcesDirectory)'
         NuGetApiKey = '$(apikey)'
       }
       Publish-Module @params
