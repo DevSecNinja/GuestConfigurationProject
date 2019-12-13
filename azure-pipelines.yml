@@ -33,6 +33,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
+      ls $(Build.SourcesDirectory)
       $params = @{
         Path        = '$(Build.SourcesDirectory)'
         NuGetApiKey = '$(apikey)'
