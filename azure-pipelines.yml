@@ -33,11 +33,21 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      ls $(Build.SourcesDirectory)
+      mkdir '$(Build.SourcesDirectory)\GuestConfigurationProject'
+      robocopy /e '$(Build.SourcesDirectory)\Modules' '$(Build.SourcesDirectory)\GuestConfigurationProject\Modules'
+      robocopy /e '$(Build.SourcesDirectory)\test' '$(Build.SourcesDirectory)\GuestConfigurationProject\test'
+      copy Configuration.mof $(Build.SourcesDirectory)\GuestConfigurationProject\'
+      copy GestConfigurationProject.psd1 $(Build.SourcesDirectory)\GuestConfigurationProject\'
+      copy LICENSE $(Build.SourcesDirectory)\GuestConfigurationProject\'
+      copy plasterManifest.xml $(Build.SourcesDirectory)\GuestConfigurationProject\'
+      copy project.code-workspace $(Build.SourcesDirectory)\GuestConfigurationProject\'
+
       $params = @{
         Path        = '$(Build.SourcesDirectory)'
         NuGetApiKey = '$(apikey)'
       }
-      Publish-Module @params
+      Get-ChildItem $(Build.SourcesDirectory)\GuestConfigurationProject\' -recurse
+      
+      #Publish-Module @params
     pwsh: false
   displayName: 'Publish to Gallery'
