@@ -25,22 +25,8 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-        $powerShellPath = Join-Path -Path $env:AGENT_TEMPDIRECTORY -ChildPath 'powershell'
-        Invoke-WebRequest -Uri https://raw.githubusercontent.com/PowerShell/PowerShell/master/tools/install-powershell.ps1 -outfile ./install-powershell.ps1
-        ./install-powershell.ps1 -Destination $powerShellPath -Preview
-        $vstsCommandString = "vso[task.setvariable variable=PATH]$powerShellPath;$env:PATH"
-        Write-Host "sending " + $vstsCommandString
-        Write-Host "##$vstsCommandString"
-    pwsh: false
-  displayName: Install PowerShell Core
-
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: |
-      Install-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201 -Force
       Install-Module Plaster,Pester,GuestConfiguration -force
-    pwsh: true
+    pwsh: false
   displayName: 'Install required modules'
   
 - task: PowerShell@2
@@ -51,7 +37,6 @@ steps:
         Path        = '$(Build.SourcesDirectory)\GuestConfigurationProject'
         NuGetApiKey = '$(apikey)'
       }
-      $publish = Publish-Module @params
-      $publish | get-member
-    pwsh: true
+      Publish-Module @params
+    pwsh: false
   displayName: 'Publish to Gallery'
