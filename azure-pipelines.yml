@@ -36,6 +36,7 @@ steps:
       mkdir '$(Build.SourcesDirectory)\GuestConfigurationProject'
       
       mkdir '$(Build.SourcesDirectory)\GuestConfigurationProject\editor'
+      mkdir '$(Build.SourcesDirectory)\GuestConfigurationProject\editor\VSCode'
       copy '$(Build.SourcesDirectory)\editor\VSCode\settings.json' '$(Build.SourcesDirectory)\GuestConfigurationProject\editor\VSCode\settings.json'
       copy '$(Build.SourcesDirectory)\editor\VSCode\tasks.json' '$(Build.SourcesDirectory)\GuestConfigurationProject\editor\VSCode\tasks.json'
       
